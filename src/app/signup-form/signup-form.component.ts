@@ -1,3 +1,4 @@
+import { CustomValidators } from './custom-validators';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -11,7 +12,11 @@ export class SignupFormComponent {
   formcontrol= new FormGroup({  //instance of a form group object
 
     //instance of password and username has been created
-    username: new FormControl('', Validators.required), //formcontrol is derived from abstract class
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      CustomValidators.nospace 
+    ]), //formcontrol is derived from abstract class
     password: new FormControl('', Validators.required) 
     //validators added in form control objects and initially set to null  
   });
