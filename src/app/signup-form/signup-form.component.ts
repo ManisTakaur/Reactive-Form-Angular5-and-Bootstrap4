@@ -17,12 +17,20 @@ export class SignupFormComponent {
       Validators.minLength(3),
       CustomValidators.nospace 
     ]), //formcontrol is derived from abstract class
-    password: new FormControl('', Validators.required) 
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+      CustomValidators.nospace
+    ]) 
     //validators added in form control objects and initially set to null  
   });
 
   get username(){
     return this.formcontrol.get('username'); //to get the value of username in div
+  }
+
+  get password(){
+    return this.formcontrol.get('password');
   }
 
 }

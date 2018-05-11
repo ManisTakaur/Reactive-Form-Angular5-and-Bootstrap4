@@ -6,7 +6,7 @@ export class CustomValidators{
         if((control.value as string).indexOf(' ') >=0){
             //checking for spaces    
             return { nospace: true};
-                //returning parametre reuires boolean method 
+                //returning parametre requires boolean method 
         }
     }    
 }
