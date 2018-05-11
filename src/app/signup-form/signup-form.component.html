@@ -34,7 +34,9 @@
                     <div *ngIf="password.errors.nospace">Password Cannot Contain Spaces</div>    
                 </div>    
         </div>
-        <button class="btn btn-primary" type="submit">Sign Up</button>
-    </div>
-    
+        <button class="btn btn-primary" type="submit" 
+            [disabled]="username.invalid || password.invalid">
+            Sign Up
+        </button>
+    </div>   
 </form>
